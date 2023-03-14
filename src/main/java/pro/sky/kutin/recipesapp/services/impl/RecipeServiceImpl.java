@@ -30,6 +30,9 @@ public class RecipeServiceImpl implements RecipeService {
         }
         int id = recipeId++;
         recipes.put(id, recipe);
+        for (Ingredient ingredient : recipe.getIngredients()) {
+            ingredientService.addIngredient(ingredient);
+        }
         return RecipeDTO.from(id, recipe);
     }
 

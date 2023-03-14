@@ -5,10 +5,10 @@ import pro.sky.kutin.recipesapp.model.Ingredient;
 public class IngredientDTO {
     private final int id;
     private final String name;
-    private final int count;
+    private final float count;
     private final String measureUnit;
 
-    public IngredientDTO(int id, String name, int count, String measureUnit) {
+    public IngredientDTO(int id, String name, float count, String measureUnit) {
         this.id = id;
         this.name = name;
         this.count = count;
@@ -23,7 +23,7 @@ public class IngredientDTO {
         return name;
     }
 
-    public int getCount() {
+    public float getCount() {
         return count;
     }
 

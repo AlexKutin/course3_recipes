@@ -33,7 +33,7 @@ public class RecipeController {
         return ResponseEntity.ok(recipeDTOList);
     }
 
-    @GetMapping
+    @GetMapping("/byIngredient")
     public ResponseEntity<List<RecipeDTO>> getRecipesByIngredientId(@RequestParam("ingredientId") int ingredientId) {
         List<RecipeDTO> recipesDTO = recipeService.getRecipesByIngredientId(ingredientId);
         if (recipesDTO != null) {
@@ -42,7 +42,7 @@ public class RecipeController {
         return ResponseEntity.notFound().build();
     }
 
-    @GetMapping
+    @GetMapping("/byIngredients")
     public ResponseEntity<List<RecipeDTO>> getRecipesByIngredientsIds(@RequestParam("ingredientIds") List<Integer> ingredientIds) {
         List<RecipeDTO> recipesDTO = recipeService.getRecipesByIngredientsIds(ingredientIds);
         if (recipesDTO != null) {
@@ -51,7 +51,7 @@ public class RecipeController {
         return ResponseEntity.notFound().build();
     }
 
-    @GetMapping
+    @GetMapping("/byPage")
     public ResponseEntity<List<RecipeDTO>> getAllRecipesByPage(@RequestParam("page") int pageNumber) {
         // We believe that the page numbering starts from 1
         List<RecipeDTO> recipesDTO = recipeService.getAllRecipes()

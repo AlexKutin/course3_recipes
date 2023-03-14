@@ -2,10 +2,10 @@ package pro.sky.kutin.recipesapp.model;
 
 public class Ingredient {
     private String name;
-    private int count;
+    private float count;
     private String measureUnit;
 
-    public Ingredient(String name, int count, String measureUnit) {
+    public Ingredient(String name, float count, String measureUnit) {
         this.name = name;
         this.count = count;
         this.measureUnit = measureUnit;
@@ -19,7 +19,7 @@ public class Ingredient {
         this.name = name;
     }
 
-    public int getCount() {
+    public float getCount() {
         return count;
     }
 
